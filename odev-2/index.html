@@ -18,7 +18,7 @@
         </div>
         <!-- 2) "keydown" event'ini dinleyerek value değişkeni içerisinde yazdığınız veriyi saklayın. (ipucu: event.target.value size yazdığınız değeri verebilir.) -->
         <div class="mb-10">
-          <input type="text" @keydown="bindValue" />
+          <input type="text" @keydown="bindValue" :value="value" />
           <p>{{ value }}</p>
         </div>
         <!-- 3) 2.Uygulamayı düzenleyerek eğer keydown ENTER ise yazdığınız verinin value değerine aktarılmasını sağlayın -->

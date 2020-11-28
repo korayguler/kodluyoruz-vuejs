@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#calculator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 40px;
+}
+#calculator input[type='text'] {
+  font-size: 20px;
+}
+
+#calculator button {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+#calculator h4 {
+  margin-bottom: 20px;
+  font-size: 30px;
+}

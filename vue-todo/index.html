@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VueJS - Calculator</title>
+    <link rel="stylesheet" href="app.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="card list">
+          <h2 class="mb-20">Todo List</h2>
+          <input type="text" v-model="input" @keydown.enter="add" />
+          <ul>
+            <div
+              class="list-item d-flex justify-content-between align-items-center"
+              v-for="(todo,index) in todos"
+            >
+              <h3>{{todo}}</h3>
+              <button class="btn-sm btn-danger" @click="remove(index)">
+                remove
+              </button>
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
