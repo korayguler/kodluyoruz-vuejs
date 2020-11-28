@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Js Todo</title>
+    <style>
+      li {
+        user-select: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" name="" id="input" />
+    <ul id="list"></ul>
+
+    <script>
+      const list = document.querySelector('#list');
+      const input = document.querySelector('#input');
+      let todos = [];
+      createElem = (tag, text, cls, index) => {
+        const el = document.createElement(tag);
+        if (cls) el.classList.add(cls);
+        el.textContent = text;
+        el.dataset.index = index;
+        el.addEventListener('click', (e) => {
+          todos.splice(e.target.dataset.index, 1);
+          refreshUI();
+        });
+        return el;
+      };
+
+      input.addEventListener('keydown', (e) => {
+        if (e.keyCode == 13) {
+          todos.push(input.value);
+          refreshUI();
+        }
+      });
+
+      const refreshUI = () => {
+        list.innerHTML = null;
+        todos.forEach((e, i) => {
+          list.appendChild(createElem('li', e, 'item', i));
+        });
+      };
+    </script>
+  </body>
+</html>
