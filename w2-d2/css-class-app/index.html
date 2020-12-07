@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CSS Class App</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <header>CSS Class App</header>
+    <div id="app" class="container css--class--app">
+      <div class="card text-center">
+        <ul class="css--palette text-center">
+          <li
+            v-for="color in color_palette"
+            :class="color.css_class"
+            :key="color.id"
+            @click="changeClass(color.css_class)"
+          ></li>
+        </ul>
+        <div class="result-box" :class="customClass"></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
