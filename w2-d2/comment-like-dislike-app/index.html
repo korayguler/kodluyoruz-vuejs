@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Comment Like/Dislike App</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
+  <body>
+    <header>Comment Like/Dislike App</header>
+    <div id="app" class="container">
+      <div class="comment--like--dislike--app">
+        <div
+          v-for="comment in comments"
+          :key="comment.id"
+          class="card mb-10 comment--item"
+        >
+          <p>{{comment.text}}</p>
+          <div class="action--button--container text-right mt-10">
+            <button class="btn-sm btn-success" @click="comment.like++">
+              Beğendim ({{comment.like}})
+            </button>
+            <button class="btn-sm btn-danger" @click="comment.dislike++">
+              Beğenmedim ({{comment.dislike}})
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

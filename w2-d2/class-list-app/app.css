@@ -1,0 +1,21 @@
+.bg {
+  background: rebeccapurple;
+}
+.color {
+  color: aliceblue;
+}
+
+.border {
+  border: 3px solid black;
+}
+
+.border-rad {
+  border-radius: 12px;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+.font-italic {
+  font-style: italic;
+}
