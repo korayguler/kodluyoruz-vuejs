@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Kurs Planlaması</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+  </head>
+  <body>
+    <header>Kurs Planlaması</header>
+    <div id="app">
+      <div class="container">
+        <div class="course--planner-app--container">
+          <div class="card">
+            <div class="user--action--container">
+              <div class="form-group">
+                <label>Kursun Adı</label>
+                <input
+                  type="text"
+                  v-model="inputValue"
+                  @keypress.enter="addCourse"
+                />
+              </div>
+              <button class="btn-primary" @click="addCourse">Ekle</button>
+              <button class="btn-primary btn-danger" @click="clearAll">
+                temizle
+              </button>
+            </div>
+            <h3 class="text-danger" v-if="alert">
+              Lütfen Boş Değer Girmeyiniz !!!
+            </h3>
+          </div>
+
+          <div class="card card-light mt-20">
+            <h3>Aktif Kurslarım</h3>
+            <ul class="list mt-20">
+              <li
+                v-for="course in courses"
+                :key="course.id"
+                class="course-item list-item"
+                :class="{'bg-danger' : !course.check , 'bg-success' : course.check}"
+              >
+                <span>{{course.name}}</span>
+                <input type="checkbox" v-model="course.check" />
+              </li>
+            </ul>
+          </div>
+          <div class="mt-10 text-primary" v-if="this.courses.length >0">
+            <small>İzlenecek {{this.courses.length}} adet kursunuz var.</small>
+          </div>
+
+          <div class="mt-10 text-danger" v-if="checkedCount> 0">
+            <small
+              >Tamamlanmayan {{checkedCount}} adet kursunuz
+              bulunmaktadır.</small
+            >
+          </div>
+          <div
+            class="mt-10 text-success"
+            v-if="this.courses.length - checkedCount> 0"
+          >
+            <small
+              >Tamamlanan {{this.courses.length - checkedCount}} adet kursunuz
+              bulunmaktadır.</small
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
