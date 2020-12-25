@@ -1,0 +1,22 @@
+{
+  "bookmarks": [
+    {
+      "title": "Google.com",
+      "description": "güzel site",
+      "url": "https://google.com",
+      "id": 1
+    },
+    {
+      "title": "korayguler.com",
+      "description": "benim sitem",
+      "url": "https://Korayguler.com",
+      "id": 2
+    },
+    {
+      "title": "kablosuzkedi.com",
+      "description": "gökan hocanın sitesi",
+      "url": "https://kablosuzkedi.com/",
+      "id": 3
+    }
+  ]
+}
